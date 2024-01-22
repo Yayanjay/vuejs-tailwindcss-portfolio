@@ -7,7 +7,7 @@ const routes = [
 		name: 'Home',
 		component: Home,
 		meta: {
-			title: 'Stoman - Home',
+			title: 'Zayyan - Home',
 		},
 	},
 	{
@@ -19,7 +19,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "about" */ '../views/About.vue'),
 		meta: {
-			title: 'Stoman - About',
+			title: 'Zayyan - About',
 		},
 	},
 	{
@@ -31,7 +31,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Projects.vue'),
 		meta: {
-			title: 'Stoman - Projects',
+			title: 'Zayyan - Projects',
 		},
 	},
 	{
@@ -45,7 +45,18 @@ const routes = [
 				/* webpackChunkName: "projects" */ '../views/SingleProject.vue'
 			),
 		meta: {
-			title: 'Stoman - Single Project',
+			title: 'Zayyan - Single Project',
+		},
+	},
+	{
+		path: '/projects/1',
+		name: 'Detail Project',
+		component: () =>
+			import(
+				/* webpackChunkName: "projects" */ '../views/ProjectDetail.vue'
+			),
+		meta: {
+			title: 'Zayyan - Detail Project',
 		},
 	},
 	{
@@ -57,7 +68,19 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Contact.vue'),
 		meta: {
-			title: 'Stoman - Contact',
+			title: 'Zayyan - Contact',
+		},
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		name: 'Not Found',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../components/shared/NotFound.vue'),
+		meta: {
+			title: 'Not Found',
 		},
 	},
 ];
